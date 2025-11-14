@@ -101,3 +101,21 @@ main { flex: 1; }
     font-size: 16px;
   }
 }
+
+@media (max-width: 768px) {
+  header {
+    z-index: 10;
+  }
+
+  .grid-equipe {
+    z-index: 1;
+  }
+
+  .nav-bar,
+  .nav-content,
+  .search-bar {
+    position: relative;
+    z-index: 10;
+    background-color: #002b5c;
+  }
+}
