@@ -530,14 +530,26 @@ main {
     gap: 20px;
   }
 
-  .descricao-membro {
-    position: static;
-    opacity: 1 !important;
-    pointer-events: auto;
-    width: 100%;
-    height: auto;
-    margin-top: 10px;
-  }
+.descricao-membro {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(224, 224, 224, 0.85); /* semitransparente */
+  padding: 12px;
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 10;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
 
   .membro {
     width: 100%;
