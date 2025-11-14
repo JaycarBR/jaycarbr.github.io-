@@ -3,7 +3,6 @@ document.querySelectorAll('.membro').forEach(membro => {
     const descricao = membro.querySelector('.descricao-membro');
 
     if (window.innerWidth > 768) {
-      // Desktop: mostra ao lado
       descricao.style.opacity = '1';
       descricao.style.pointerEvents = 'auto';
 
@@ -12,7 +11,6 @@ document.querySelectorAll('.membro').forEach(membro => {
         next.style.marginLeft = '270px';
       }
     } else {
-      // Mobile: sobreposição
       descricao.style.opacity = '1';
       descricao.style.pointerEvents = 'auto';
     }
