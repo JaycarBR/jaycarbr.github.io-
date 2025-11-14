@@ -2,9 +2,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Quem Somos - Matsubara Advogados</title>
+  <title>Matsubara Advogados</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
   <header>
@@ -19,46 +18,93 @@
             <li><a href="contato.html">Contato</a></li>
           </ul>
         </nav>
-        <div class="search-bar">
-          <div class="search-box">
-            <input type="text" placeholder="Buscar..." />
-            <button>&#128269;</button>
-          </div>
-        </div>
+            <div class="search-bar">
+      <div class="divider behind-search"></div>
+      <div class="search-box">
+        <input type="text" placeholder="Buscar..." />
+        <button>&#128269;</button>
+      </div>
       </div>
     </div>
+
     <div class="nav-divider"></div>
   </header>
 
+  <!-- Faixas decorativas atrás do carrossel -->
   <div class="faixa-branca"></div>
   <div class="faixa-dourada"></div>
 
-  <main class="container" id="quemsomos">
-    <h2 style="text-align:center; color:#002b5c; margin-top:40px;">Quem Somos</h2>
-    <div style="display: flex; flex-wrap: wrap; gap: 40px; justify-content: center; align-items: center; margin: 40px auto;">
-      <div style="flex: 1; min-width: 300px; max-width: 600px;">
-        <p style="font-size: 16px; line-height: 1.6; color: #333;">
-          <strong style="color:#002b5c;">Nossa Missão:</strong> Inovação Jurídica para um Futuro Sustentável
-        </p>
-        <p style="font-size: 16px; line-height: 1.6; color: #333;">
-          Fundado em 2015, o Matsubara Advogados é especializado em Propriedade Intelectual, Bioeconomia e Inovação. Oferecemos soluções jurídicas inovadoras que promovem a sustentabilidade e o uso ético dos recursos biológicos, focando na preservação do patrimônio genético brasileiro e na disseminação de um mercado mais verde e inclusivo.
-        </p>
-        <p style="font-size: 16px; line-height: 1.6; color: #333;">
-          Atuamos em rótulos, ingredientes e embalagens de alimentos e bebidas e outros setores. Recomendamos biotecnologias, inteligência artificial e soluções digitais para a proteção de ativos intangíveis e modelos de negócios sustentáveis.
-        </p>
-        <ul style="list-style: none; padding-left: 0; margin-top: 20px;">
-          <li style="margin-bottom: 10px;"><i class="fas fa-check-circle" style="color:#d4af37; margin-right: 8px;"></i> Propriedade Intelectual e Inovação</li>
-          <li style="margin-bottom: 10px;"><i class="fas fa-check-circle" style="color:#d4af37; margin-right: 8px;"></i> Sustentabilidade e Bioeconomia</li>
-          <li><i class="fas fa-check-circle" style="color:#d4af37; margin-right: 8px;"></i> Impacto Social e Ambiental</li>
-        </ul>
+<section class="carousel">
+  <div class="carousel-item active">
+    <a href="empresa.html">
+      <div class="carousel-frame">
+        <img src="https://picsum.photos/1200/500?random=1" alt="Empresa" />
+        <div class="carousel-caption">
+          <h2>Sobre a Empresa</h2>
+          <p>Conheça nossa história e valores.</p>
+        </div>
       </div>
-      <div style="flex: 1; min-width: 300px; max-width: 600px;">
-        <img src="https://images.unsplash.com/photo-1603791440384-56cd371ee9a7?auto=format&fit=crop&w=800&q=80" alt="Sala de reunião moderna" style="width: 100%; border: 4px solid #004080; border-radius: 4px;" />
+    </a>
+  </div>
+
+  <div class="carousel-item">
+    <a href="equipe.html">
+      <div class="carousel-frame">
+        <img src="https://picsum.photos/1200/500?random=2" alt="Equipe" />
+        <div class="carousel-caption">
+          <h2>Nossa Equipe</h2>
+          <p>Profissionais especializados em diversas áreas do Direito.</p>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <div class="carousel-item">
+    <a href="atuacao.html">
+      <div class="carousel-frame">
+        <img src="https://picsum.photos/1200/500?random=3" alt="Atuação" />
+        <div class="carousel-caption">
+          <h2>Áreas de Atuação</h2>
+          <p>Conheça os serviços jurídicos que oferecemos.</p>
+        </div>
+      </div>
+    </a>
+  </div>
+</section>
+
+  <section class="noticias-artigos">
+  <div class="container">
+    <h2>Notícias e Artigos</h2>
+    <p class="descricao-noticias">Conteúdo especializado e referências em conhecimentos jurídicos.</p>
+    <div class="tabs">
+      <button class="tab active">Notícias</button>
+      <button class="tab">Artigos</button>
+    </div>
+
+    <div class="grid-noticias">
+      <div class="card-noticia">
+        <h3>Nota de Pesar: Falecimento do Dr. Dário Guimarães de Andrade</h3>
+        <p>SETTE CÂMARA, CORRÊA E BASTOS ADVOGADOS ASSOCIADOS expressa condolências pelo falecimento do Dr. Dário.</p>
+      </div>
+
+      <div class="card-noticia">
+        <h3>Medida Provisória cria Plano Brasil Semicondutores</h3>
+        <p>Nova MP estabelece medidas emergenciais para exportações afetadas por tarifas dos EUA.</p>
+      </div>
+
+      <div class="card-noticia">
+        <h3>Certificado Nacional de Inovação Jurídica</h3>
+        <p>Sette Câmara, Corrêa e Bastos recebe reconhecimento por práticas inovadoras no setor jurídico.</p>
       </div>
     </div>
-  </main>
 
-<div class="sessao-grid">
+    <div class="ver-todas">
+      <a href="#noticias">Ver todas as notícias</a>
+    </div>
+  </div>
+</section>
+  
+  <div class="sessao-grid">
   <div class="container-grid">
     <section id="empresa">
       <h2>Empresa</h2>
@@ -74,9 +120,18 @@
     </section>
   </div>
 </div>
-  
+
   <footer>
     <p>&copy; 2025 Matsubara Advogados</p>
   </footer>
+
+  <script>
+    const carouselImg = document.getElementById('carousel-img');
+    let index = 1;
+    setInterval(() => {
+      index = (index % 3) + 1;
+      carouselImg.src = `https://picsum.photos/1200/500?random=${index}`;
+    }, 4000);
+  </script>
 </body>
 </html>
