@@ -18,7 +18,8 @@ header {
   position: relative;
   height: 110px;
   z-index: 1;
-  border-bottom: 8px solid #d4af37;
+  border-bottom: 10px solid #d4af37;
+  min-height: 110px;
 }
 
 /* Navegação e Busca (Desktop) */
