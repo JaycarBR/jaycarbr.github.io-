@@ -560,13 +560,13 @@ main {
   /* Menu oculto por padrão em mobile */
   .nav-menu {
     position: fixed;
-    top: 170px;
+    top: 70px;
     left: -100%;
     width: 100%;
     background-color: #002b5c;
     transition: left 0.3s ease;
     z-index: 999;
-    padding: 20px 0;
+    padding: 200px 0;
   }
 
   .nav-menu.active {
