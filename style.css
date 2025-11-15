@@ -18,6 +18,7 @@ header {
   position: relative;
   height: 110px;
   z-index: 1;
+  border-bottom: 8px solid #d4af37;
 }
 
 /* Navegação e Busca (Desktop) */
@@ -122,15 +123,6 @@ header {
 
 .hamburger.active span:nth-child(3) {
   transform: rotate(-45deg) translate(7px, -6px);
-}
-
-/* Faixas decorativas */
-.faixa-dourada {
-  background-color: #d4af37;
-  height: 8px;
-  width: 100%;
-  position: relative;
-  z-index: 0;
 }
 
 /* Carrossel */
