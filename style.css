@@ -218,7 +218,7 @@ html, body {
 }
 
 body {
-  display: flex;
+  display: absolute;
   flex-direction: column;
 }
 
