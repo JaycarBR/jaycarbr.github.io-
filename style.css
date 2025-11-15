@@ -95,13 +95,42 @@ header {
   font-size: 16px;
 }
 
+/* Botão Hambúrguer (oculto no desktop) */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 4px;
+  padding: 10px;
+  z-index: 1001;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  transition: all 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -6px);
+}
+
 /* Faixas decorativas */
 .faixa-dourada {
   background-color: #d4af37;
-  height: 120px;
+  height: 8px;
   width: 100%;
-  position: absolute;
-  z-index: -1;
+  position: relative;
+  z-index: 0;
 }
 
 /* Carrossel */
@@ -110,9 +139,9 @@ header {
   justify-content: center;
   align-items: center;
   padding: 0;
-  margin-top: 30px; /* sobe mais para cobrir parte da faixa azul */
+  margin-top: 30px;
   position: relative;
-  z-index: 3; /* garante que fique acima do header */
+  z-index: 3;
 }
 
 .carousel-frame {
@@ -199,7 +228,7 @@ main {
 
 /* Notícias e Artigos */
 .noticias-artigos {
-  margin-top: -40px; /* sobe mais para cobrir parte da faixa azul */
+  margin-top: -40px;
   background-color: #f9f9f9;
   padding: 60px 0;
 }
@@ -276,7 +305,7 @@ main {
 
 /* Sessão Grid (Faixa Azul Inferior) */
 .sessao-grid {
-  background-color: #003b7c; /* faixa azul */
+  background-color: #003b7c;
   padding: 30px 0;
 }
 
@@ -508,51 +537,66 @@ main {
 @media (max-width: 768px) {
   /* Header e Navegação */
   header {
-    height: auto; /* Permite que o header se ajuste ao conteúdo empilhado */
-    z-index: 10;
+    height: 70px;
+    z-index: 1000;
   }
 
   .nav-bar {
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     padding: 15px 3%;
-    height: auto;
+    height: 100%;
   }
 
   .nav-content {
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
+    justify-content: space-between;
     gap: 10px;
     width: 100%;
     height: auto;
+  }
+
+  /* Mostrar botão hambúrguer */
+  .hamburger {
+    display: flex;
+  }
+
+  /* Menu oculto por padrão em mobile */
+  .nav-menu {
+    position: fixed;
+    top: 70px;
+    left: -100%;
+    width: 100%;
+    background-color: #002b5c;
+    transition: left 0.3s ease;
+    z-index: 999;
+    padding: 20px 0;
+  }
+
+  .nav-menu.active {
+    left: 0;
   }
 
   .nav-menu ul {
     flex-direction: column;
     align-items: center;
-    gap: 10px;
+    gap: 5px;
     height: auto;
   }
 
   .nav-menu ul li {
     margin: 5px 0;
+    padding: 5px 0;
   }
 
   .nav-menu ul li a {
-    font-size: 16px;
+    font-size: 18px;
   }
 
   .search-bar {
-    width: 100%;
-    justify-content: center;
-    margin-top: 10px;
-    margin-left: 0;
-  }
-
-  .search-box {
-    width: 90%;
-    margin-left: 0;
+    display: none;
   }
 
   /* Carrossel */
