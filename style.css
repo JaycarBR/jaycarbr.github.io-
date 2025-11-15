@@ -20,7 +20,6 @@ header {
   z-index: 1;
   border-bottom: 10px solid #d4af37;
   min-height: 110px;
-  align-items: center; /* centraliza horizontalmente */
 }
 
 /* Navegação e Busca (Desktop) */
