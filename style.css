@@ -50,7 +50,9 @@ header {
   margin: 0;
   height: 100%;
   align-items: center;
-  margin-top: -90px; /* ajuste fino */
+  position: relative;
+  top: -10px;
+
 }
 
 .nav-menu ul li {
