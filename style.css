@@ -568,6 +568,7 @@ main {
     transition: left 0.3s ease;
     z-index: 999;
     padding: 20px 0;
+    white-space: nowrap;
   }
 
   .nav-menu.active {
@@ -575,7 +576,8 @@ main {
   }
 
   .nav-menu ul {
-    flex-direction: column;
+    flex-wrap: nowrap;
+    overflow-x: auto;
     align-items: center;
     gap: 5px;
     height: auto;
