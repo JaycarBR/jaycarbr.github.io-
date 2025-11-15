@@ -529,7 +529,7 @@ main {
 }
 
 /* --- Responsividade (Mobile e Tablet) --- */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   /* Header e Navegação */
   header {
     height: 70px;
