@@ -554,7 +554,7 @@ footer {
   .nav-bar,
   .nav-content {
     justify-content: space-between;
-    gap: 0px;
+    gap: 10px;
     width: 97%;
   }
 
