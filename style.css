@@ -211,7 +211,92 @@ header {
 }
 
 /* ==========================================================================
-   4. SEÇÃO DE NOTÍCIAS E ARTIGOS
+   4. SEÇÃO DE EQUIPE (CÓDIGO CORRETO E COMPLETO)
+   ========================================================================== */
+
+.grid-equipe {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  margin: 40px auto;
+  max-width: 1200px;
+  padding: 0 15px;
+}
+
+.membro {
+  position: relative;
+  width: 240px;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.membro img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  display: block;
+}
+
+.nome-linkedin {
+  background-color: #002b5c;
+  color: white;
+  padding: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 0 0 4px 4px;
+}
+
+.nome-linkedin h3 {
+  margin: 0;
+  font-size: 15px;
+  color: white;
+}
+
+.nome-linkedin a {
+  color: #d4af37;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.descricao-membro {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 88%;
+  background-color: rgba(0, 43, 92, 0.9);
+  color: white;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 10;
+}
+
+/* Mostra a descrição com CLIQUE/TOQUE (para todos os dispositivos) */
+.membro.active .descricao-membro {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Mostra a descrição com HOVER (apenas em desktops) */
+@media (hover: hover) and (min-width: 769px) {
+  .membro:hover .descricao-membro {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+/* ==========================================================================
+   5. SEÇÃO DE NOTÍCIAS E ARTIGOS
    ========================================================================== */
 
 .noticias-artigos {
@@ -254,7 +339,6 @@ header {
   font-weight: bold;
 }
 
-/* Controle de visibilidade do conteúdo das abas */
 .tab-content {
   display: none;
 }
@@ -266,24 +350,24 @@ header {
 .grid-noticias {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px; /* Adicionado um gap para espaçar os cards */
+  gap: 20px;
 }
 
 .card-link {
-  text-decoration: none; /* Remove o sublinhado do link */
-  color: inherit; /* Faz o texto do card herdar a cor padrão */
+  text-decoration: none;
+  color: inherit;
   display: block;
   transition: transform 0.3s ease;
 }
 
 .card-link:hover {
-  transform: translateY(-5px); /* Efeito de levantar ao passar o mouse */
+  transform: translateY(-5px);
 }
 
 .card-noticia {
   background-color: white;
   padding: 20px;
-  height: 100%; /* Garante que todos os cards tenham a mesma altura */
+  height: 100%;
   box-sizing: border-box;
   border: 1px solid #eee;
   border-radius: 4px;
@@ -313,7 +397,7 @@ header {
 }
 
 /* ==========================================================================
-   5. FOOTER E FAIXA INFERIOR
+   6. FOOTER E FAIXA INFERIOR
    ========================================================================== */
 
 .sessao-grid {
@@ -353,7 +437,7 @@ footer {
 }
 
 /* ==========================================================================
-   6. RESPONSIVIDADE (MEDIA QUERIES)
+   7. RESPONSIVIDADE (MEDIA QUERIES)
    ========================================================================== */
 
 @media (max-width: 768px) {
@@ -412,6 +496,18 @@ footer {
     font-size: 16px;
   }
 
+  /* Equipe Mobile */
+  .grid-equipe {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .membro {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  /* Faixa Inferior Mobile */
   .container-grid {
     width: 90%;
     grid-template-columns: 1fr;
