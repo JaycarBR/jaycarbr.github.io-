@@ -552,7 +552,61 @@ footer {
 }
 
 /* ==========================================================================
-   8. RESPONSIVIDADE (MEDIA QUERIES)
+   8. PÁGINA DE ÁREAS DE ATUAÇÃO (ACORDEÃO)
+   ========================================================================== */
+
+.accordion-container {
+  max-width: 900px;
+  margin: 0 auto 60px; /* Espaçamento inferior */
+}
+
+.accordion-item {
+  border-bottom: 1px solid #ddd;
+}
+
+.accordion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 20px 0;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-size: 18px;
+  font-weight: 600;
+  color: #002b5c;
+}
+
+.accordion-icon {
+  font-size: 24px;
+  font-weight: 300;
+  color: #555;
+  transition: transform 0.3s ease;
+}
+
+.accordion-item.active .accordion-icon {
+  transform: rotate(180deg); /* Animação opcional para o ícone de menos */
+}
+
+.accordion-content {
+  max-height: 0; /* Começa fechado */
+  overflow: hidden;
+  transition: max-height 0.4s ease-out; /* Animação de expansão */
+  padding: 0 10px;
+}
+
+.accordion-content p {
+  padding-bottom: 20px;
+  margin: 0;
+  line-height: 1.7;
+  color: #333;
+}
+
+
+/* ==========================================================================
+   9. RESPONSIVIDADE (MEDIA QUERIES)
    ========================================================================== */
 
 @media (max-width: 768px) {
