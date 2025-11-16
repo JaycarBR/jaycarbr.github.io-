@@ -8,6 +8,7 @@
 </head>
 <body>
   <header>
+    <!-- ... (código do header sem alterações ) ... -->
     <div class="nav-bar">
       <div class="nav-content">
         <img src="https://pbs.twimg.com/media/G5rAi2zWcAAgHG8?format=jpg&name=240x240" alt="Matsubara Advogados" class="logo" />
@@ -20,7 +21,6 @@
           <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="quemsomos.html">Quem somos</a></li>
-            <li><a href="atuacao.html">Área de atuação</a></li>
             <li><a href="equipe.html">Equipe</a></li>
             <li><a href="contato.html">Contato</a></li>
           </ul>
@@ -41,32 +41,57 @@
 
   <main class="container" id="contato">
     <h2 style="text-align:center; color:#002b5c; margin-top:40px;">Contato</h2>
-<div class="formulario-contato">
-  <form action="#" method="post">
-    <label for="nome">Nome:</label>
-    <input type="text" id="nome" name="nome" required />
+    <div class="formulario-contato">
+      <form action="#" method="post">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required />
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" required />
+        <label for="assunto">Assunto:</label>
+        <input type="text" id="assunto" name="assunto" required />
+        <label for="mensagem">Mensagem:</label>
+        <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+        <button type="submit">Enviar</button>
+      </form>
 
-    <label for="email">E-mail:</label>
-    <input type="email" id="email" name="email" required />
+      <!-- SEÇÃO DE INFORMAÇÕES ATUALIZADA COM O MAPA -->
+      <div class="info-contato">
+        <h3>Nosso Endereço</h3>
+        <p>Rua Vergueiro, 2045 - Vila Mariana, São Paulo - SP, 04101-000</p>
+        
+        <!-- MAPA DO GOOGLE ADICIONADO AQUI -->
+        <div class="mapa-container">
+          <a href="https://www.google.com/maps/search/?api=1&query=Rua+Vergueiro,+2045+-+Vila+Mariana,+São+Paulo+-+SP" target="_blank">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.97490139523!2d-46.64059648498349!3d-23.56916998467931!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c3a33d9a3b%3A0x732a355c9b4f0e6b!2sRua%20Vergueiro%2C%202045%20-%20Vila%20Mariana%2C%20São%20Paulo%20-%20SP%2C%2004101-000!5e0!3m2!1spt-BR!2sbr!4v1671234567890!5m2!1spt-BR!2sbr" 
+              width="100%" 
+              height="250" 
+              style="border:0;" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </a>
+        </div>
 
-    <label for="assunto">Assunto:</label>
-    <input type="text" id="assunto" name="assunto" required />
+        <h3>Entre em contato conosco</h3>
+        <p>+55 11 3258-9452  
+matsubara@matsubara.adv.br</p>
 
-    <label for="mensagem">Mensagem:</label>
-    <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
-
-    <button type="submit">Enviar</button>
-  </form>
-
-  <div class="info-contato">
-    <h3>Nosso Endereço</h3>
-    <p>Rua Vergueiro, 2045 - Vila Mariana, São Paulo - SP, 04101-000</p>
-    <h3>Entre em contato conosco</h3>
-    <p>+55 11 3258-9452<br>matsubara@matsubara.adv.br</p>
-  </div>
-</div>
+        <h3>Siga-nos</h3>
+        <div class="redes-sociais">
+          <a href="https://wa.me/5511999999999" target="_blank" class="social-button whatsapp">
+            <i class="fab fa-whatsapp"></i> WhatsApp
+          </a>
+          <a href="https://www.instagram.com/seu_usuario_aqui" target="_blank" class="social-button instagram">
+            <i class="fab fa-instagram"></i> Instagram
+          </a>
+        </div>
+      </div>
+    </div>
   </main>
 
+  <!-- ... (código da faixa inferior e footer sem alterações ) ... -->
   <div class="sessao-grid">
     <div class="container-grid">
       <a href="quemsomos.html" class="grid-link">
@@ -75,10 +100,10 @@
           <p>Informações sobre a história, missão e valores do escritório.</p>
         </section>
       </a>
-      <a href="contato.html" class="grid-link">
+      <a href="equipe.html" class="grid-link">
         <section>
-          <h2>Contato</h2>
-          <p>Entre em contato com nossa equipe.</p>
+          <h2>Equipe</h2>
+          <p>Conheça os profissionais que compõem nossa equipe jurídica.</p>
         </section>
       </a>
       <a href="https://www.google.com/maps/search/?api=1&query=Rua+Vergueiro,+2045+-+Vila+Mariana,+São+Paulo+-+SP" target="_blank" class="grid-link">
