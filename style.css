@@ -614,7 +614,7 @@ main {
 }
 
 /* --- Responsividade (Mobile e Tablet) --- */
-@media2 (max-width: 900px) {
+@media2 (max-width: 768px) {
   /* Equipe */
   .grid-equipe {
     flex-direction: column;
