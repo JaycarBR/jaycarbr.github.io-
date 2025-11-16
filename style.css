@@ -158,7 +158,6 @@ header {
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
-  width: 100%; /* <<<--- ESTA É A CORREÇÃO */
 }
 
 .carousel-item {
