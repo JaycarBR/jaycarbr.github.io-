@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
     startSlideShow();
   }
 
-  // --- LÓGICA DO NOVO CARROSSEL DE ÁREAS DE ATUAÇÃO ---
+  // --- LÓGICA DO CARROSSEL DE ÁREAS DE ATUAÇÃO (ATUALIZADA) ---
   const atuacaoSlider = document.querySelector('.atuacao-slider');
   const prevButton = document.getElementById('prev-atuacao');
   const nextButton = document.getElementById('next-atuacao');
@@ -49,18 +49,45 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const updateItemsPerPage = () => {
       if (window.innerWidth <= 768) {
-        itemsPerPage = 1; // 1 card por vez em telas menores
+        itemsPerPage = 1;
       } else {
-        itemsPerPage = 3; // 3 cards por vez em telas maiores
+        itemsPerPage = 3;
       }
+      // Garante que o índice atual não seja inválido após redimensionar
+      if (currentIndex > cards.length - itemsPerPage) {
+        currentIndex = cards.length - itemsPerPage;
+      }
+      updateSliderPosition();
     };
 
     const updateSliderPosition = () => {
       const cardWidth = cards[0].offsetWidth;
       const gap = 20; // O mesmo valor do 'gap' no CSS
-      const totalWidth = cardWidth + gap;
-      atuacaoSlider.style.transform = `translateX(-${currentIndex * totalWidth}px)`;
+      const totalWidthToMove = cardWidth + gap;
+      
+      atuacaoSlider.style.transform = `translateX(-${currentIndex * totalWidthToMove}px)`;
       
       // Habilita/desabilita botões
       prevButton.disabled = currentIndex === 0;
       nextButton.disabled = currentIndex >= cards.length - itemsPerPage;
+    };
+
+    nextButton.addEventListener('click', () => {
+      if (currentIndex < cards.length - itemsPerPage) {
+        currentIndex++;
+        updateSliderPosition();
+      }
+    });
+
+    prevButton.addEventListener('click', () => {
+      if (currentIndex > 0) {
+        currentIndex--;
+        updateSliderPosition();
+      }
+    });
+
+    // Atualiza o carrossel ao carregar a página e ao redimensionar a janela
+    window.addEventListener('resize', updateItemsPerPage);
+    updateItemsPerPage(); // Chamada inicial para configurar o carrossel
+  }
+});
