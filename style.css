@@ -23,7 +23,7 @@ header {
   min-height: 110px;
 }
 
-/* ... (todo o seu CSS de header, carrossel, etc., permanece igual) ... */
+/* ... (código do header, nav, etc. - sem alterações) ... */
 .nav-bar { display: flex; align-items: center; justify-content: center; padding: 0 3%; height: 100%; }
 .nav-content { display: flex; align-items: center; gap: 60px; height: 100%; }
 .logo { height: 60px; }
@@ -66,23 +66,21 @@ main { flex: 1; }
 .ver-todas { text-align: right; margin-top: 30px; }
 .ver-todas a { color: #004080; text-decoration: none; font-weight: 500; }
 
-/* --- Sessão Grid (Faixa Azul Inferior) - ATUALIZADO --- */
+/* --- Sessão Grid (Faixa Azul Inferior) - CORRIGIDO --- */
 .sessao-grid {
   background-color: #003b7c;
-  padding: 40px 5%; /* Aumentei o padding para dar mais respiro */
-  box-sizing: border-box;
+  padding: 30px 0;
 }
 
 .container-grid {
-  display: grid;
-  /* MUDANÇA 1: Força 3 colunas de tamanho igual */
-  grid-template-columns: repeat(3, 1fr); 
+  /* MUDANÇA 1: Usando Flexbox para garantir a linha horizontal */
+  display: flex;
+  justify-content: space-between; /* Espaça os itens igualmente */
   gap: 40px;
-  /* MUDANÇA 2: Remove a largura fixa para ocupar todo o espaço */
-  width: 100%; 
+  /* MUDANÇA 2: Mantendo a largura original que você gostava */
+  width: 50%; 
   max-width: 2200px;
   margin: auto;
-  text-align: center; /* Centraliza o texto dentro de cada bloco */
 }
 
 .container-grid h2 {
@@ -95,12 +93,17 @@ main { flex: 1; }
   color: #fff;
 }
 
+.container-grid section {
+  flex: 1; /* Permite que os itens se ajustem em tamanho */
+  min-width: 0; /* Importante para o flexbox encolher os itens corretamente */
+}
+
 .container-grid section:hover {
   transform: translateY(-5px);
   transition: transform 0.3s ease;
 }
 
-/* --- Estilos da Equipe (Simplificado e Atualizado) --- */
+/* --- Estilos da Equipe (Mantido da versão anterior) --- */
 .grid-equipe {
   display: flex;
   flex-wrap: wrap;
@@ -110,76 +113,16 @@ main { flex: 1; }
   max-width: 1200px;
   padding: 0 15px;
 }
+.membro { position: relative; width: 240px; flex-shrink: 0; cursor: pointer; }
+.foto-nome { width: 100%; }
+.membro img { width: 100%; height: 250px; object-fit: cover; display: block; }
+.nome-linkedin { background-color: #002b5c; color: white; padding: 8px; display: flex; justify-content: center; align-items: center; gap: 8px; border-radius: 0 0 4px 4px; }
+.nome-linkedin h3 { margin: 0; font-size: 15px; color: white; }
+.nome-linkedin a { color: #d4af37; font-size: 16px; text-decoration: none; }
+.descricao-membro { position: absolute; top: 0; left: 0; width: 100%; height: 88%; background-color: rgba(0, 43, 92, 0.9); color: white; padding: 20px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; text-align: center; opacity: 0; pointer-events: none; transition: opacity 0.3s ease; z-index: 10; }
+.membro.active .descricao-membro { opacity: 1; pointer-events: auto; }
 
-.membro {
-  position: relative; /* Essencial para o posicionamento da descrição */
-  width: 240px;
-  flex-shrink: 0;
-  cursor: pointer; /* Indica que o elemento é clicável */
-}
-
-.foto-nome {
-  width: 100%;
-}
-
-.membro img {
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
-  display: block;
-}
-
-.nome-linkedin {
-  background-color: #002b5c;
-  color: white;
-  padding: 8px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  border-radius: 0 0 4px 4px;
-}
-
-.nome-linkedin h3 {
-  margin: 0;
-  font-size: 15px;
-  color: white;
-}
-
-.nome-linkedin a {
-  color: #d4af37;
-  font-size: 16px;
-  text-decoration: none;
-}
-
-/* Descrição do Membro com Efeito de Sobreposição */
-.descricao-membro { 
-  position: absolute; 
-  top: 0; 
-  left: 0; 
-  width: 100%; 
-  height: 88%; /* Cobre a foto, mas não o nome/linkedin */
-  background-color: rgba(0, 43, 92, 0.9); /* Fundo azul escuro com 90% de opacidade */
-  color: white;
-  padding: 20px; 
-  box-sizing: border-box;
-  display: flex; 
-  align-items: center; 
-  justify-content: center;
-  text-align: center;
-  opacity: 0; 
-  pointer-events: none; /* Não interage quando invisível */
-  transition: opacity 0.3s ease; 
-  z-index: 10; 
-}
-
-/* Mostra a descrição quando o membro está ativo */
-.membro.active .descricao-membro {
-  opacity: 1;
-  pointer-events: auto; /* Permite interação quando visível */
-}
-
-/* ... (Resto do seu CSS de Quem Somos, Contato, etc.) ... */
+/* ... (Resto do CSS) ... */
 .titulo-quemsomos { text-align: center; color: #002b5c; margin-top: 40px; font-size: 32px; }
 .quemsomos-bloco { display: flex; flex-wrap: wrap; gap: 40px; justify-content: center; align-items: center; margin: 40px auto; }
 .quemsomos-texto { flex: 1; min-width: 300px; max-width: 600px; font-size: 16px; line-height: 1.6; color: #333; }
@@ -217,12 +160,8 @@ main { flex: 1; }
   .info-contato { margin-bottom: 50px; }
   .formulario-contato { flex-direction: column; align-items: stretch; }
   
-  /* MUDANÇA 3: Ajuste da faixa azul para telas menores */
-  .container-grid {
-    grid-template-columns: 1fr; /* Em telas pequenas, volta a ser uma coluna */
-    width: 90%;
-    gap: 20px;
-  }
+  /* MUDANÇA 3: REMOVIDA a regra que quebrava a linha da faixa azul */
+  /* A regra .container-grid { grid-template-columns: 1fr; } foi removida daqui */
 
   .grid-equipe { flex-direction: column; align-items: center; }
   .membro { width: 100%; max-width: 300px; }
