@@ -46,7 +46,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 0%;
+  padding: 0 3%;
   height: 100%;
 }
 
@@ -145,7 +145,7 @@ header {
 }
 
 /* ==========================================================================
-   3. CARROSSEL (COM LAYOUT CORRIGIDO)
+   3. CARROSSEL SUPERIOR
    ========================================================================== */
 
 .carousel {
@@ -158,6 +158,7 @@ header {
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
+  width: 100%; 
 }
 
 .carousel-item {
@@ -334,101 +335,105 @@ header {
 }
 
 /* ==========================================================================
-   5. SEÇÃO DE NOTÍCIAS E ARTIGOS (Página Inicial)
+   5. CARROSSEL DE ÁREAS DE ATUAÇÃO (NOVO)
    ========================================================================== */
 
-.pagina-inicial .noticias-artigos {
-  margin-top: -40px;
-  background-color: #f9f9f9;
+.atuacao-carousel {
   padding: 60px 0;
+  background-color: #f9f9f9;
 }
 
-.pagina-inicial .noticias-artigos h2 {
-  text-align: center;
-  color: #002b5c;
-  margin-bottom: 10px;
-  font-size: 38px;
-}
-
-.pagina-inicial .descricao-noticias {
-  text-align: center;
-}
-
-.pagina-inicial .tabs {
+.atuacao-header {
   display: flex;
-  justify-content: center;
-  gap: 20px;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 30px;
 }
 
-.pagina-inicial .tab {
-  background-color: #e0e0e0;
-  border: none;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 4px;
-  transition: background-color 0.3s;
-}
-
-.pagina-inicial .tab.active {
-  background-color: #d4af37;
-  color: white;
-  font-weight: bold;
-}
-
-.pagina-inicial .tab-content {
-  display: none;
-}
-
-.pagina-inicial .tab-content.active {
-  display: block;
-}
-
-.pagina-inicial .grid-noticias {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-}
-
-.pagina-inicial .card-link {
-  text-decoration: none;
-  color: inherit;
-  display: block;
-  transition: transform 0.3s ease;
-}
-
-.pagina-inicial .card-link:hover {
-  transform: translateY(-5px);
-}
-
-.pagina-inicial .card-noticia {
-  background-color: white;
-  padding: 20px;
-  height: 100%;
-  box-sizing: border-box;
-  border: 1px solid #eee;
-  border-radius: 4px;
-}
-
-.pagina-inicial .card-noticia h3 {
-  font-size: 20px;
+.atuacao-title h2 {
   color: #002b5c;
-  margin-top: 0;
-  margin-bottom: 10px;
+  font-size: 38px;
+  margin: 0;
 }
 
-.pagina-inicial .card-noticia p {
-  font-size: 15px;
+.atuacao-title p {
+  margin: 5px 0 0;
   color: #555;
 }
 
-.pagina-inicial .ver-todas {
+.atuacao-controls {
+  display: flex;
+  gap: 10px;
+}
+
+.arrow-button {
+  background-color: #e0e0e0;
+  border: 1px solid #ccc;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.arrow-button:first-child {
+  background-color: #d4af37;
+  border-color: #c8a02b;
+  color: white;
+}
+
+.arrow-button:hover {
+  background-color: #c8a02b;
+  border-color: #b38f24;
+  color: white;
+}
+
+.arrow-button:disabled {
+  background-color: #f0f0f0;
+  border-color: #ddd;
+  color: #aaa;
+  cursor: not-allowed;
+}
+
+.atuacao-slider-wrapper {
+  overflow: hidden; /* A "janela" do carrossel */
+}
+
+.atuacao-slider {
+  display: flex;
+  gap: 20px;
+  transition: transform 0.5s ease-in-out; /* Animação de deslize */
+}
+
+.card-atuacao {
+  flex: 0 0 calc(33.333% - 14px); /* Mostra 3 cards por vez, descontando o gap */
+  background-color: white;
+  border: 1px solid #eee;
+  padding: 25px;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+
+.card-atuacao h3 {
+  color: #002b5c;
+  margin-top: 0;
+  font-size: 20px;
+}
+
+.card-atuacao p {
+  color: #555;
+  font-size: 15px;
+  line-height: 1.6;
+  text-align: justify; /* Alinhamento justificado como pedido */
+}
+
+.ver-todas {
   text-align: right;
   margin-top: 30px;
 }
 
-.pagina-inicial .ver-todas a {
+.ver-todas a {
   color: #004080;
   text-decoration: none;
   font-weight: 500;
@@ -554,8 +559,8 @@ footer {
   .nav-bar,
   .nav-content {
     justify-content: space-between;
-    gap: 10px;
-    width: 100%;
+    gap: 0px;
+    width: 97%;
   }
 
   .hamburger {
@@ -564,7 +569,7 @@ footer {
 
   .nav-menu {
     position: absolute;
-    top: -200px;
+    top: -300px;
     left: 0;
     width: 100%;
     background-color: #002b5c;
@@ -574,7 +579,7 @@ footer {
   }
 
   .nav-menu.active {
-    top: 0px;
+    top: 0;
   }
 
   .nav-menu ul {
@@ -602,6 +607,17 @@ footer {
   .nav-button {
     width: 40px;
     height: 6px;
+  }
+
+  /* Carrossel de Atuação em Telas Menores */
+  .atuacao-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  
+  .card-atuacao {
+    flex: 0 0 90%; /* Mostra 1 card por vez em telas menores */
   }
 
   .grid-equipe {
