@@ -65,11 +65,40 @@ main { flex: 1; }
 .card-noticia p { font-size: 15px; color: #555; }
 .ver-todas { text-align: right; margin-top: 30px; }
 .ver-todas a { color: #004080; text-decoration: none; font-weight: 500; }
-.sessao-grid { background-color: #003b7c; padding: 30px 0; }
-.container-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; width: 50%; max-width: 2200px; margin: auto; }
-.container-grid h2 { color: #fff; font-size: 25px; margin-bottom: 10px; }
-.container-grid p { color: #fff; }
-.container-grid section:hover { transform: translateY(-5px); }
+
+/* --- Sessão Grid (Faixa Azul Inferior) - ATUALIZADO --- */
+.sessao-grid {
+  background-color: #003b7c;
+  padding: 40px 5%; /* Aumentei o padding para dar mais respiro */
+  box-sizing: border-box;
+}
+
+.container-grid {
+  display: grid;
+  /* MUDANÇA 1: Força 3 colunas de tamanho igual */
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 40px;
+  /* MUDANÇA 2: Remove a largura fixa para ocupar todo o espaço */
+  width: 100%; 
+  max-width: 2200px;
+  margin: auto;
+  text-align: center; /* Centraliza o texto dentro de cada bloco */
+}
+
+.container-grid h2 {
+  color: #fff;
+  font-size: 25px;
+  margin-bottom: 10px;
+}
+
+.container-grid p {
+  color: #fff;
+}
+
+.container-grid section:hover {
+  transform: translateY(-5px);
+  transition: transform 0.3s ease;
+}
 
 /* --- Estilos da Equipe (Simplificado e Atualizado) --- */
 .grid-equipe {
@@ -134,14 +163,10 @@ main { flex: 1; }
   color: white;
   padding: 20px; 
   box-sizing: border-box;
-  
-  /* Centraliza o texto da descrição */
   display: flex; 
   align-items: center; 
   justify-content: center;
   text-align: center;
-
-  /* Efeito de transição */
   opacity: 0; 
   pointer-events: none; /* Não interage quando invisível */
   transition: opacity 0.3s ease; 
@@ -191,7 +216,14 @@ main { flex: 1; }
   .formulario-contato form { margin-bottom: -20px; }
   .info-contato { margin-bottom: 50px; }
   .formulario-contato { flex-direction: column; align-items: stretch; }
-  .container-grid { width: 90%; grid-template-columns: 1fr; }
+  
+  /* MUDANÇA 3: Ajuste da faixa azul para telas menores */
+  .container-grid {
+    grid-template-columns: 1fr; /* Em telas pequenas, volta a ser uma coluna */
+    width: 90%;
+    gap: 20px;
+  }
+
   .grid-equipe { flex-direction: column; align-items: center; }
   .membro { width: 100%; max-width: 300px; }
 }
