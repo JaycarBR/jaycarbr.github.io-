@@ -406,6 +406,10 @@ header {
   transition: transform 0.5s ease-in-out;
 }
 
+.atuacao-slider.no-transition {
+  transition: none;
+}
+
 .card-atuacao {
   flex: 0 0 calc(33.333% - 14px); /* Define a largura para mostrar 3 cards */
   background-color: white;
@@ -437,10 +441,6 @@ header {
   color: #004080;
   text-decoration: none;
   font-weight: 500;
-}
-
-.atuacao-slider.no-transition {
-  transition: none;
 }
 
 /* ==========================================================================
