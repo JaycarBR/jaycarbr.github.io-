@@ -37,92 +37,128 @@
   <div class="faixa-branca"></div>
   <div class="faixa-dourada"></div>
 
-<section class="carousel">
-  <div class="carousel-item active">
-    <a href="empresa.html">
-      <div class="carousel-frame">
-        <img src="https://picsum.photos/1200/500?random=1" alt="Empresa" />
-        <div class="carousel-caption">
-          <h2>Sobre a Empresa</h2>
-          <p>Conheça nossa história e valores.</p>
+  <section class="carousel">
+    <div class="carousel-item active">
+      <a href="empresa.html">
+        <div class="carousel-frame">
+          <img src="https://picsum.photos/1200/500?random=1" alt="Empresa" />
+          <div class="carousel-caption">
+            <h2>Sobre a Empresa</h2>
+            <p>Conheça nossa história e valores.</p>
+          </div>
         </div>
-      </div>
-    </a>
-  </div>
+      </a>
+    </div>
 
-  <div class="carousel-item">
-    <a href="equipe.html">
-      <div class="carousel-frame">
-        <img src="https://picsum.photos/1200/500?random=2" alt="Equipe" />
-        <div class="carousel-caption">
-          <h2>Nossa Equipe</h2>
-          <p>Profissionais especializados em diversas áreas do Direito.</p>
+    <div class="carousel-item">
+      <a href="equipe.html">
+        <div class="carousel-frame">
+          <img src="https://picsum.photos/1200/500?random=2" alt="Equipe" />
+          <div class="carousel-caption">
+            <h2>Nossa Equipe</h2>
+            <p>Profissionais especializados em diversas áreas do Direito.</p>
+          </div>
         </div>
-      </div>
-    </a>
-  </div>
+      </a>
+    </div>
 
-  <div class="carousel-item">
-    <a href="atuacao.html">
-      <div class="carousel-frame">
-        <img src="https://picsum.photos/1200/500?random=3" alt="Atuação" />
-        <div class="carousel-caption">
-          <h2>Áreas de Atuação</h2>
-          <p>Conheça os serviços jurídicos que oferecemos.</p>
+    <div class="carousel-item">
+      <a href="atuacao.html">
+        <div class="carousel-frame">
+          <img src="https://picsum.photos/1200/500?random=3" alt="Atuação" />
+          <div class="carousel-caption">
+            <h2>Áreas de Atuação</h2>
+            <p>Conheça os serviços jurídicos que oferecemos.</p>
+          </div>
         </div>
-      </div>
-    </a>
-  </div>
-</section>
+      </a>
+    </div>
+  </section>
 
   <section class="noticias-artigos">
-  <div class="container">
-    <h2>Notícias e Artigos</h2>
-    <p class="descricao-noticias">Conteúdo especializado e referências em conhecimentos jurídicos.</p>
-    <div class="tabs">
-      <button class="tab active">Notícias</button>
-      <button class="tab">Artigos</button>
-    </div>
-
-    <div class="grid-noticias">
-      <div class="card-noticia">
-        <h3>Nota de Pesar: Falecimento do Dr. Dário Guimarães de Andrade</h3>
-        <p>SETTE CÂMARA, CORRÊA E BASTOS ADVOGADOS ASSOCIADOS expressa condolências pelo falecimento do Dr. Dário.</p>
+    <div class="container">
+      <h2>Notícias e Artigos</h2>
+      <p class="descricao-noticias">Conteúdo especializado e referências em conhecimentos jurídicos.</p>
+      
+      <!-- Botões das abas -->
+      <div class="tabs">
+        <button class="tab active" data-tab="noticias">Notícias</button>
+        <button class="tab" data-tab="artigos">Artigos</button>
       </div>
 
-      <div class="card-noticia">
-        <h3>Medida Provisória cria Plano Brasil Semicondutores</h3>
-        <p>Nova MP estabelece medidas emergenciais para exportações afetadas por tarifas dos EUA.</p>
+      <!-- Conteúdo das Notícias (Visível por padrão ) -->
+      <div id="noticias-content" class="tab-content active">
+        <div class="grid-noticias">
+          <a href="#" class="card-link">
+            <div class="card-noticia">
+              <h3>Nota de Pesar: Falecimento do Dr. Dário Guimarães de Andrade</h3>
+              <p>SETTE CÂMARA, CORRÊA E BASTOS ADVOGADOS ASSOCIADOS expressa condolências pelo falecimento do Dr. Dário.</p>
+            </div>
+          </a>
+          <a href="#" class="card-link">
+            <div class="card-noticia">
+              <h3>Medida Provisória cria Plano Brasil Semicondutores</h3>
+              <p>Nova MP estabelece medidas emergenciais para exportações afetadas por tarifas dos EUA.</p>
+            </div>
+          </a>
+          <a href="#" class="card-link">
+            <div class="card-noticia">
+              <h3>Certificado Nacional de Inovação Jurídica</h3>
+              <p>Sette Câmara, Corrêa e Bastos recebe reconhecimento por práticas inovadoras no setor jurídico.</p>
+            </div>
+          </a>
+        </div>
+        <div class="ver-todas">
+          <a href="#noticias">Ver todas as notícias</a>
+        </div>
       </div>
 
-      <div class="card-noticia">
-        <h3>Certificado Nacional de Inovação Jurídica</h3>
-        <p>Sette Câmara, Corrêa e Bastos recebe reconhecimento por práticas inovadoras no setor jurídico.</p>
+      <!-- Conteúdo dos Artigos (Oculto por padrão) -->
+      <div id="artigos-content" class="tab-content">
+        <div class="grid-noticias">
+          <a href="#" class="card-link">
+            <div class="card-noticia">
+              <h3>A Reforma Tributária e o Impacto no Setor de Serviços</h3>
+              <p>Análise aprofundada sobre as novas alíquotas e regimes de tributação para empresas de tecnologia e consultoria.</p>
+            </div>
+          </a>
+          <a href="#" class="card-link">
+            <div class="card-noticia">
+              <h3>LGPD em 2025: Desafios da Inteligência Artificial</h3>
+              <p>Como aplicar os princípios da Lei Geral de Proteção de Dados em sistemas de IA e mitigar riscos de privacidade.</p>
+            </div>
+          </a>
+          <a href="#" class="card-link">
+            <div class="card-noticia">
+              <h3>Bioeconomia e Propriedade Intelectual na Amazônia</h3>
+              <p>Os desafios jurídicos para a proteção de patentes e conhecimentos tradicionais associados à biodiversidade.</p>
+            </div>
+          </a>
+        </div>
+        <div class="ver-todas">
+          <a href="#artigos">Ver todos os artigos</a>
+        </div>
       </div>
-    </div>
 
-    <div class="ver-todas">
-      <a href="#noticias">Ver todas as notícias</a>
     </div>
-  </div>
-</section>
+  </section>
   
   <div class="sessao-grid">
-  <div class="container-grid">
-    <section id="empresa">
-      <h2>Empresa</h2>
-      <p>Informações sobre a história, missão e valores do escritório.</p>
-    </section>
-    <section id="equipe">
-      <h2>Equipe</h2>
-      <p>Conheça os profissionais que compõem nossa equipe jurídica.</p>
-    </section>
-    <section id="Localizacao">
-      <h2>Localização</h2>
-      <p>Rua Vergueiro, 2045 - Vila Mariana, São Paulo - SP, 04101-000</p>
-    </section>
+    <div class="container-grid">
+      <section id="empresa">
+        <h2>Empresa</h2>
+        <p>Informações sobre a história, missão e valores do escritório.</p>
+      </section>
+      <section id="equipe">
+        <h2>Equipe</h2>
+        <p>Conheça os profissionais que compõem nossa equipe jurídica.</p>
+      </section>
+      <section id="Localizacao">
+        <h2>Localização</h2>
+        <p>Rua Vergueiro, 2045 - Vila Mariana, São Paulo - SP, 04101-000</p>
+      </section>
+    </div>
   </div>
-</div>
 
   <footer>
     <p>&copy; 2025 Matsubara Advogados</p>
