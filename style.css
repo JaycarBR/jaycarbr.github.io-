@@ -555,7 +555,7 @@ footer {
   .nav-content {
     justify-content: space-between;
     gap: 10px;
-    width: 97%;
+    width: 100%;
   }
 
   .hamburger {
