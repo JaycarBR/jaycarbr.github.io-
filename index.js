@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // --- LÓGICA DO CARROSSEL SUPERIOR ---
+  // --- LÓGICA DO CARROSSEL SUPERIOR (sem alterações) ---
   const carouselItems = document.querySelectorAll('.carousel-item');
   const navButtons = document.querySelectorAll('.nav-button');
   let currentSlide = 0;
@@ -37,57 +37,88 @@ document.addEventListener('DOMContentLoaded', () => {
     startSlideShow();
   }
 
-  // --- LÓGICA DO CARROSSEL DE ÁREAS DE ATUAÇÃO (ATUALIZADA) ---
-  const atuacaoSlider = document.querySelector('.atuacao-slider');
-  const prevButton = document.getElementById('prev-atuacao');
-  const nextButton = document.getElementById('next-atuacao');
-  const cards = document.querySelectorAll('.card-atuacao');
-
-  if (atuacaoSlider && prevButton && nextButton && cards.length > 0) {
+  // --- LÓGICA DO CARROSSEL DE ÁREAS DE ATUAÇÃO (LOOP INFINITO) ---
+  const slider = document.querySelector('.atuacao-slider');
+  const prevBtn = document.getElementById('prev-atuacao');
+  const nextBtn = document.getElementById('next-atuacao');
+  
+  if (slider && prevBtn && nextBtn) {
+    let cards = Array.from(slider.children);
     let currentIndex = 0;
-    let itemsPerPage = 3; // Padrão para desktop
+    let itemsPerPage = 3;
+    let isMoving = false;
 
-    const updateItemsPerPage = () => {
+    const setupSlider = () => {
+      // Determina quantos itens mostrar
       if (window.innerWidth <= 768) {
         itemsPerPage = 1;
       } else {
         itemsPerPage = 3;
       }
-      // Garante que o índice atual não seja inválido após redimensionar
-      if (currentIndex > cards.length - itemsPerPage) {
-        currentIndex = cards.length - itemsPerPage;
-      }
-      updateSliderPosition();
+
+      // Clona os itens para o efeito de loop
+      const cardsToClone = itemsPerPage;
+      const firstClones = cards.slice(0, cardsToClone).map(card => card.cloneNode(true));
+      const lastClones = cards.slice(-cardsToClone).map(card => card.cloneNode(true));
+
+      // Limpa o slider e adiciona os clones
+      slider.innerHTML = '';
+      lastClones.forEach(clone => slider.appendChild(clone));
+      cards.forEach(card => slider.appendChild(card));
+      firstClones.forEach(clone => slider.appendChild(clone));
+      
+      // Atualiza a lista de cards para incluir os clones
+      cards = Array.from(slider.children);
+      
+      // Define a posição inicial para mostrar os primeiros itens reais
+      currentIndex = cardsToClone;
+      updateSliderPosition(false); // false = sem animação
     };
 
-    const updateSliderPosition = () => {
+    const updateSliderPosition = (animate = true) => {
+      if (!animate) {
+        slider.classList.add('no-transition');
+      }
+
       const cardWidth = cards[0].offsetWidth;
-      const gap = 20; // O mesmo valor do 'gap' no CSS
-      const totalWidthToMove = cardWidth + gap;
-      
-      atuacaoSlider.style.transform = `translateX(-${currentIndex * totalWidthToMove}px)`;
-      
-      // Habilita/desabilita botões
-      prevButton.disabled = currentIndex === 0;
-      nextButton.disabled = currentIndex >= cards.length - itemsPerPage;
+      const gap = 20;
+      const moveDistance = currentIndex * (cardWidth + gap);
+      slider.style.transform = `translateX(-${moveDistance}px)`;
+
+      if (!animate) {
+        // Força o navegador a aplicar o estilo antes de remover a classe
+        setTimeout(() => slider.classList.remove('no-transition'), 50);
+      }
     };
 
-    nextButton.addEventListener('click', () => {
-      if (currentIndex < cards.length - itemsPerPage) {
-        currentIndex++;
-        updateSliderPosition();
-      }
-    });
+    const moveSlider = (direction) => {
+      if (isMoving) return;
+      isMoving = true;
 
-    prevButton.addEventListener('click', () => {
-      if (currentIndex > 0) {
-        currentIndex--;
-        updateSliderPosition();
-      }
-    });
+      currentIndex += direction;
+      updateSliderPosition();
 
-    // Atualiza o carrossel ao carregar a página e ao redimensionar a janela
-    window.addEventListener('resize', updateItemsPerPage);
-    updateItemsPerPage(); // Chamada inicial para configurar o carrossel
+      // Listener para o final da transição
+      slider.addEventListener('transitionend', () => {
+        isMoving = false;
+
+        // Lógica para o "salto" do loop
+        if (currentIndex <= itemsPerPage - 1) {
+          currentIndex = cards.length - itemsPerPage * 2;
+          updateSliderPosition(false);
+        }
+        if (currentIndex >= cards.length - itemsPerPage) {
+          currentIndex = itemsPerPage;
+          updateSliderPosition(false);
+        }
+      }, { once: true }); // O listener é removido após ser disparado uma vez
+    };
+
+    nextBtn.addEventListener('click', () => moveSlider(1));
+    prevBtn.addEventListener('click', () => moveSlider(-1));
+
+    // Configuração inicial e reconfiguração ao redimensionar
+    setupSlider();
+    window.addEventListener('resize', setupSlider);
   }
 });
