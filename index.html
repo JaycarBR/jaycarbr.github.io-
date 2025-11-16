@@ -19,7 +19,7 @@
           <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="quemsomos.html">Quem somos</a></li>
-            <li><a href="equipe.html">Equipe</a></li>
+            <li><a href="areas.html">Áreas de atuação</a></li>
             <li><a href="contato.html">Contato</a></li>
           </ul>
         </nav>
@@ -38,7 +38,6 @@
   <div class="faixa-dourada"></div>
 
   <section class="carousel">
-    <!-- CORREÇÃO: Contêiner adicionado para controlar tamanho e centralização -->
     <div class="carousel-container">
       <div class="carousel-item active">
         <a href="empresa.html">
@@ -79,7 +78,6 @@
         </a>
       </div>
 
-      <!-- Botões de navegação do carrossel -->
       <div class="carousel-nav">
         <button class="nav-button active" data-slide="0"></button>
         <button class="nav-button" data-slide="1"></button>
@@ -88,34 +86,50 @@
     </div>
   </section>
 
-  <section class="noticias-artigos">
+  <!-- SEÇÃO DE ÁREAS DE ATUAÇÃO (NOVO CARROSSEL DE CARDS ) -->
+  <section class="atuacao-carousel">
     <div class="container">
-      <h2>Áreas de atuação</h2>
-      <p class="descricao-noticias">Advocacia estratégica para todos os casos.</p>
-      
-      <div class="tabs">
-        <button class="tab active" data-tab="noticias"><</button>
-        <button class="tab" data-tab="artigos">></button>
+      <div class="atuacao-header">
+        <div class="atuacao-title">
+          <h2>Áreas de atuação</h2>
+          <p>Advocacia estratégica para todos os casos.</p>
+        </div>
+        <div class="atuacao-controls">
+          <button id="prev-atuacao" class="arrow-button">&lt;</button>
+          <button id="next-atuacao" class="arrow-button">&gt;</button>
+        </div>
       </div>
 
-      <div id="noticias-content" class="tab-content active">
-        <div class="grid-noticias">
-          <a href="#" class="card-link"><div class="card-noticia"><h3>Inovação</h3><p>O trabalho envolve a elaboração e gestão de contratos de parceria com setores produtivos, instituições científicas e tecnológicas e agências de fomento. Também inclui assessoria em contratos de incubação, parques tecnológicos, direitos de startups e crowdfunding, além de consultoria voltada para incentivos fiscais à inovação e contratos de transferência de tecnologias.</p></div></a>
-          <a href="#" class="card-link"><div class="card-noticia"><h3>Propriedade Intelectual
-</h3><p></p>O foco está no desenvolvimento de estratégias, gestão e treinamento em contratos de entretenimento, streaming e relacionamento com influenciadores, além da proteção de direitos autorais e de personalidade, especialmente os direitos de imagem. Também são tratados contratos envolvendo inteligência artificial no âmbito dos direitos autorais, impactos de obras em domínio público e contenciosos relacionados a infrações e limitações autorais. A atuação abrange ainda contratos de softwares, aplicativos e algoritmos, bem como o registro de direitos autorais na Biblioteca Nacional, em cartórios ou por meio de estratégias específicas de proteção.</div></a>
-          <a href="#" class="card-link"><div class="card-noticia"><h3>Bioeconomia
-</h3><p>A atuação se concentra na criação de estratégias, políticas e treinamentos relacionados à repartição de benefícios, sejam monetários ou não monetários, e ao compliance com o Protocolo de Nagoia, incluindo a emissão de IRCC em países signatários. No Brasil, isso envolve a Lei de Acesso e Repartição de Benefícios, com destaque para o cadastro eletrônico no SISGEN. Além disso, há a legalização de relações entre povos indígenas, comunidades tradicionais e o setor produtivo, bem como a elaboração de estratégias ligadas ao mercado de carbono, tanto no Brasil quanto no exterior.</p></div></a>
+      <div class="atuacao-slider-wrapper">
+        <div class="atuacao-slider">
+          <div class="card-atuacao">
+            <h3>Inovação</h3>
+            <p>O trabalho envolve a elaboração e gestão de contratos de parceria com setores produtivos, instituições científicas e tecnológicas e agências de fomento. Também inclui assessoria em contratos de incubação, parques tecnológicos, direitos de startups e crowdfunding, além de consultoria voltada para incentivos fiscais à inovação e contratos de transferência de tecnologias.</p>
+          </div>
+          <div class="card-atuacao">
+            <h3>Propriedade Intelectual</h3>
+            <p>O foco está no desenvolvimento de estratégias, gestão e treinamento em contratos de entretenimento, streaming e relacionamento com influenciadores, além da proteção de direitos autorais e de personalidade, especialmente os direitos de imagem. Também são tratados contratos envolvendo inteligência artificial no âmbito dos direitos autorais, impactos de obras em domínio público e contenciosos relacionados a infrações e limitações autorais.</p>
+          </div>
+          <div class="card-atuacao">
+            <h3>Bioeconomia</h3>
+            <p>A atuação se concentra na criação de estratégias, políticas e treinamentos relacionados à repartição de benefícios, sejam monetários ou não monetários, e ao compliance com o Protocolo de Nagoia, incluindo a emissão de IRCC em países signatários. No Brasil, isso envolve a Lei de Acesso e Repartição de Benefícios, com destaque para o cadastro eletrônico no SISGEN.</p>
+          </div>
+          <div class="card-atuacao">
+            <h3>Direito Societário</h3>
+            <p>Oferecemos assessoria completa na constituição de sociedades, acordos de sócios, operações de fusões e aquisições (M&A), e reorganizações societárias. Nosso objetivo é garantir a segurança jurídica e a eficiência operacional para empresas de todos os portes, alinhando a estrutura societária aos objetivos estratégicos do negócio.</p>
+          </div>
+          <div class="card-atuacao">
+            <h3>Contratos e Negociações</h3>
+            <p>Atuamos na elaboração, revisão e negociação de contratos comerciais complexos, nacionais e internacionais. Buscamos proteger os interesses de nossos clientes, minimizando riscos e garantindo a clareza e a exequibilidade dos acordos. Nossa experiência abrange desde contratos de fornecimento e distribuição até acordos de confidencialidade.</p>
+          </div>
+          <div class="card-atuacao">
+            <h3>Compliance e LGPD</h3>
+            <p>Implementamos programas de compliance para garantir que as empresas atuem em conformidade com as leis e regulamentos aplicáveis. Oferecemos consultoria especializada na adequação à Lei Geral de Proteção de Dados (LGPD), incluindo a elaboração de políticas de privacidade, mapeamento de dados e treinamento de equipes para mitigar riscos.</p>
+          </div>
         </div>
-        <div class="ver-todas"><a href="#noticias">Ver todas as áreas</a></div>
       </div>
-
-      <div id="artigos-content" class="tab-content">
-        <div class="grid-noticias">
-          <a href="#" class="card-link"><div class="card-noticia"><h3>A Reforma Tributária e o Impacto no Setor de Serviços</h3><p>Análise aprofundada sobre as novas alíquotas e regimes de tributação para empresas de tecnologia e consultoria.</p></div></a>
-          <a href="#" class="card-link"><div class="card-noticia"><h3>LGPD em 2025: Desafios da Inteligência Artificial</h3><p>Como aplicar os princípios da Lei Geral de Proteção de Dados em sistemas de IA e mitigar riscos de privacidade.</p></div></a>
-          <a href="#" class="card-link"><div class="card-noticia"><h3>Bioeconomia e Propriedade Intelectual na Amazônia</h3><p>Os desafios jurídicos para a proteção de patentes e conhecimentos tradicionais associados à biodiversidade.</p></div></a>
-        </div>
-        <div class="ver-todas"><a href="#artigos">Ver todos os artigos</a></div>
+      <div class="ver-todas">
+        <a href="#atuacao">Ver todas as áreas</a>
       </div>
     </div>
   </section>
