@@ -2,7 +2,7 @@ document.querySelectorAll('.membro').forEach(membro => {
   membro.addEventListener('mouseenter', () => {
     const descricao = membro.querySelector('.descricao-membro');
 
-    if (window.innerWidth > 768) {
+    if (window.innerWidth > 900) {
       descricao.style.opacity = '1';
       descricao.style.pointerEvents = 'auto';
 
