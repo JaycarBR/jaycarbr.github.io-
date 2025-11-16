@@ -284,10 +284,20 @@ header {
   z-index: 10;
 }
 
+/* Mostra a descrição com CLIQUE/TOQUE (funciona em todos os dispositivos) */
 .membro.active .descricao-membro {
   opacity: 1;
   pointer-events: auto;
 }
+
+/* MUDANÇA: Mostra a descrição com HOVER (apenas em desktops) */
+@media (hover: hover) and (min-width: 769px) {
+  .membro:hover .descricao-membro {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
 
 /* ==========================================================================
    5. OUTRAS SEÇÕES (Notícias, Quem Somos, Contato)
