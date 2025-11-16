@@ -754,3 +754,28 @@ footer {
   background: #d6249f;
   background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
 }
+
+/* ==========================================================================
+   11. MAPA (PÁGINA DE CONTATO)
+   ========================================================================== */
+
+.mapa-container {
+  margin-top: 20px;
+  margin-bottom: 30px;
+  border: 2px solid #004080; /* Borda azul escura */
+  border-radius: 5px;
+  overflow: hidden; /* Garante que o iframe respeite o border-radius */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mapa-container:hover {
+  transform: scale(1.03); /* Leve zoom ao passar o mouse */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.mapa-container iframe {
+  display: block; /* Remove qualquer espaço extra abaixo do iframe */
+}
+
+
