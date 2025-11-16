@@ -145,13 +145,12 @@ header {
 }
 
 /* ==========================================================================
-   3. CARROSSEL (COM CORREÇÃO PARA OVERFLOW)
+   3. CARROSSEL (COM LAYOUT CORRIGIDO)
    ========================================================================== */
 
 .carousel {
   padding: 0;
   margin-top: 30px;
-  width: 100%; /* Garante que a seção ocupe a largura toda */
 }
 
 .carousel-container {
@@ -159,9 +158,6 @@ header {
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
-  /* CORREÇÃO: Adiciona padding nas laterais para telas menores */
-  padding: 0 20px;
-  box-sizing: border-box;
 }
 
 .carousel-item {
@@ -558,7 +554,7 @@ footer {
   .nav-bar,
   .nav-content {
     justify-content: space-between;
-    gap: 10px;
+    gap: 0px;
     width: 97%;
   }
 
