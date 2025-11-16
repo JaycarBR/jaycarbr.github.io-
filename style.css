@@ -335,7 +335,7 @@ header {
 }
 
 /* ==========================================================================
-   5. CARROSSEL DE ÁREAS DE ATUAÇÃO (COM AJUSTES DE LAYOUT)
+   5. CARROSSEL DE ÁREAS DE ATUAÇÃO
    ========================================================================== */
 
 .atuacao-carousel {
@@ -343,7 +343,6 @@ header {
   background-color: #f9f9f9;
 }
 
-/* CORREÇÃO: Header centralizado */
 .atuacao-header {
   text-align: center;
 }
@@ -359,13 +358,12 @@ header {
   color: #555;
 }
 
-/* CORREÇÃO: Controles abaixo do título */
 .atuacao-controls {
   display: flex;
   gap: 10px;
-  justify-content: center; /* Centraliza os botões */
-  margin-top: 20px; /* Espaço entre subtítulo e botões */
-  margin-bottom: 30px; /* Espaço entre botões e cards */
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 30px;
 }
 
 .arrow-button {
@@ -408,9 +406,8 @@ header {
   transition: transform 0.5s ease-in-out;
 }
 
-/* CORREÇÃO: Largura dos cards ajustada */
 .card-atuacao {
-  flex: 0 0 calc(31% - 20px); /* Cards um pouco mais curtos */
+  flex: 0 0 calc(33.333% - 14px); /* Define a largura para mostrar 3 cards */
   background-color: white;
   border: 1px solid #eee;
   padding: 25px;
@@ -428,7 +425,7 @@ header {
   color: #555;
   font-size: 15px;
   line-height: 1.6;
-  text-align: justify;
+  /* text-align: justify; <-- REMOVIDO para alinhar à esquerda */
 }
 
 .ver-todas {
@@ -614,7 +611,7 @@ footer {
 
   /* Carrossel de Atuação em Telas Menores */
   .atuacao-header {
-    align-items: center; /* Centraliza no mobile */
+    align-items: center;
   }
   
   .card-atuacao {
