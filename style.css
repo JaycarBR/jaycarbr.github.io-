@@ -529,6 +529,12 @@ header {
   margin: auto;
 }
 
+.grid-link {
+  text-decoration: none; /* Remove o sublinhado do link */
+  color: inherit;      /* Faz o link herdar a cor do texto do elemento pai */
+  display: block;      /* Faz o link ocupar todo o espaço do bloco */
+}
+
 .container-grid h2 {
   color: #fff;
   font-size: 25px;
@@ -703,4 +709,48 @@ footer {
   .info-contato {
     margin-bottom: 50px;
   }
+}
+
+/* ==========================================================================
+   10. BOTÕES DE REDES SOCIAIS (PÁGINA DE CONTATO)
+   ========================================================================== */
+
+.redes-sociais {
+  display: flex;
+  flex-direction: column; /* Botões um embaixo do outro */
+  gap: 15px; /* Espaço entre os botões */
+  margin-top: 20px;
+}
+
+.social-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 20px;
+  border-radius: 5px;
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.social-button:hover {
+  transform: scale(1.05); /* Efeito de leve aumento */
+  opacity: 0.9;
+}
+
+.social-button i {
+  margin-right: 10px; /* Espaço entre o ícone e o texto */
+  font-size: 20px;
+}
+
+/* Cores específicas para cada botão */
+.social-button.whatsapp {
+  background-color: #25D366;
+}
+
+.social-button.instagram {
+  background: #d6249f;
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
 }
