@@ -4,6 +4,8 @@ body {
   background-color: #f9f9f9;
   color: #333;
   scroll-behavior: smooth;
+  /* Garante que o corpo não crie uma barra de rolagem horizontal */
+  overflow-x: hidden;
 }
 
 .container {
@@ -17,7 +19,7 @@ header {
   color: white;
   position: relative;
   height: 110px;
-  z-index: 1;
+  z-index: 1000; /* Aumentado para garantir que o header fique sobre outros elementos */
   border-bottom: 10px solid #d4af37;
   min-height: 110px;
 }
@@ -50,7 +52,6 @@ header {
   margin: 0;
   height: 100%;
   align-items: center;
-
 }
 
 .nav-menu ul li {
@@ -326,7 +327,7 @@ main {
   transform: translateY(-5px);
 }
 
-/* Equipe */
+/* --- Estilos da Equipe (Atualizados) --- */
 .grid-equipe {
   display: flex;
   flex-wrap: wrap;
@@ -337,6 +338,8 @@ main {
   position: relative;
   padding: 0 15px;
   box-sizing: border-box;
+  /* Impede a criação da faixa branca lateral */
+  overflow-x: hidden; 
 }
 
 .membro {
@@ -344,7 +347,8 @@ main {
   display: flex;
   flex-direction: column;
   width: 240px;
-  transition: all 0.3s ease;
+  /* Transição mais específica para melhor performance */
+  transition: transform 0.3s ease; 
   flex-shrink: 0;
 }
 
@@ -386,7 +390,7 @@ main {
 .descricao-membro { 
   position: absolute; 
   top: 0; 
-  left: 100%; 
+  left: 100%; /* Posiciona à direita do card do membro */
   width: 250px; 
   height: 290px; 
   background-color: #e0e0e0; 
@@ -396,14 +400,16 @@ main {
   opacity: 0; 
   pointer-events: none; 
   transition: opacity 0.3s ease; 
-  z-index: 10; 
+  z-index: 20; /* Aumentado para garantir que fique sobre outros membros */
   box-sizing: border-box; 
   display: flex; 
   align-items: center; 
 }
 
-.membro:hover .descricao-membro {
+/* Efeito de hover/touch no membro */
+.membro.active .descricao-membro {
   opacity: 1;
+  pointer-events: auto;
 }
 
 /* Quem Somos */
@@ -533,7 +539,6 @@ main {
   /* Header e Navegação */
   header {
     height: 70px;
-    z-index: 1000;
   }
 
   .nav-bar {
@@ -571,7 +576,7 @@ main {
   }
 
   .nav-menu.active {
-    top: 0;
+    top: 70px; /* Alinha com a parte de baixo do header */
   }
 
   .nav-menu ul {
@@ -607,37 +612,38 @@ main {
     font-size: 16px;
   }
   
-.formulario-contato form {
-  margin-bottom: -20px;
-}
+  .formulario-contato form {
+    margin-bottom: -20px;
+  }
 
-.info-contato {
-  margin-bottom: 50px;
-}
-  
-}
+  .info-contato {
+    margin-bottom: 50px;
+  }
 
-/* --- Responsividade (Mobile e Tablet) --- */
-@media2 (max-width: 768px) {
-  /* Equipe */
+  /* Equipe Responsivo */
   .grid-equipe {
-    flex-direction: column;
+    flex-direction: column; /* Membros um abaixo do outro */
+    align-items: center; /* Centraliza os membros */
     gap: 20px;
+    overflow-x: hidden; /* Garante que não haja overflow */
   }
 
   .membro {
     width: 100%;
-    max-width: 300px;
+    max-width: 300px; /* Limita a largura em telas maiores de celular */
   }
   
-  /* Descrição do Membro (Mobile - Sobreposição) */
+  /* Descrição do Membro (Mobile - Sobreposição com transparência) */
   .descricao-membro { 
-    left: 0; 
+    left: 0; /* Alinha com o início do card do membro */
     width: 100%; 
-    height: 88%; 
-    background-color: rgba(224, 224, 224, 0.85); 
+    height: 88%; /* Ajusta a altura para não cobrir o nome */
+    background-color: rgba(0, 43, 92, 0.9); /* Fundo azul escuro com 90% de opacidade */
+    color: white; /* Texto branco para melhor leitura */
     justify-content: center; 
-    text-align: center; 
+    text-align: center;
+    padding: 20px;
+    border-radius: 0; /* Remove bordas arredondadas para preencher o espaço */
   }
 
   /* Outras Seções */
@@ -649,9 +655,5 @@ main {
   .container-grid {
     width: 90%;
     grid-template-columns: 1fr;
-  }
-
-  .grid-equipe {
-    z-index: 1;
   }
 }
