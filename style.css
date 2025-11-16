@@ -564,7 +564,7 @@ footer {
 
   .nav-menu {
     position: absolute;
-    top: -400px;
+    top: 0px;
     left: 0;
     width: 100%;
     background-color: #002b5c;
