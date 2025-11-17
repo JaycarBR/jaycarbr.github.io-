@@ -444,7 +444,7 @@ header {
 }
 
 /* ==========================================================================
-   6. PÁGINA DE CONTATO
+   6. PÁGINA DE CONTATO - ATUALIZADO
    ========================================================================== */
 
 .formulario-contato {
@@ -452,7 +452,7 @@ header {
   flex-wrap: wrap;
   gap: 40px;
   justify-content: center;
-  align-items: flex-start;
+  align-items: flex-start; /* CORREÇÃO: Alinha as colunas pelo topo */
   margin-top: 40px;
 }
 
@@ -510,6 +510,12 @@ header {
   color: #002b5c;
   margin-bottom: 10px;
 }
+
+.info-contato p {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
 
 /* ==========================================================================
    7. FOOTER E FAIXA INFERIOR
