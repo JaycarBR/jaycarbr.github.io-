@@ -712,29 +712,30 @@ footer {
 }
 
 /* ==========================================================================
-   10. BOTÕES DE REDES SOCIAIS (PÁGINA DE CONTATO) - ATUALIZADO
+   10. BOTÕES DE REDES SOCIAIS (PÁGINA DE CONTATO ) - ATUALIZADO
    ========================================================================== */
 
 .redes-sociais {
   display: flex;
-  flex-direction: column;
+  flex-direction: row; /* CORREÇÃO: Botões lado a lado */
+  flex-wrap: wrap;     /* Permite que quebrem a linha em telas pequenas */
   gap: 15px;
-  margin-top: 20px;
-  align-items: flex-start; /* CORREÇÃO: Alinha os botões à esquerda */
+  margin-top: 10px;
+  margin-bottom: 30px; /* Adiciona espaço antes da próxima seção */
 }
 
 .social-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 12px 20px;
+  padding: 10px 15px; /* Levemente menor para caber melhor lado a lado */
   border-radius: 5px;
   color: white;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 500;
   transition: transform 0.2s ease, opacity 0.2s ease;
-  width: auto; /* CORREÇÃO: Garante que a largura seja automática */
+  width: auto;
 }
 
 .social-button:hover {
@@ -743,8 +744,8 @@ footer {
 }
 
 .social-button i {
-  margin-right: 10px;
-  font-size: 20px;
+  margin-right: 8px;
+  font-size: 18px;
 }
 
 .social-button.whatsapp {
@@ -752,9 +753,8 @@ footer {
 }
 
 .social-button.instagram {
-  background-color: #E1306C; /* CORREÇÃO: Cor sólida para o Instagram */
+  background-color: #E1306C;
 }
-
 
 /* ==========================================================================
    11. MAPA (PÁGINA DE CONTATO)
