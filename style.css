@@ -517,7 +517,7 @@ header {
 }
 
 footer {
-  background-color: #002b5c;
+  background-color: #0b1a31;
   color: white;
   text-align: center;
   padding: 20px 0;
@@ -617,10 +617,6 @@ footer {
     flex-direction: column;
     align-items: center;
     gap: 5px;
-  }
-
-  .search-bar {
-    display: none;
   }
 
   .carousel-frame img {
